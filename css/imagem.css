@@ -1,0 +1,69 @@
+.banner-destaque {
+    width: 100vw;
+    min-height: 400px;
+
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    text-align: center;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.65)
+        ),
+        url("../imagens/pc.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.banner-conteudo {
+    position: relative;
+    z-index: 1;
+    padding: 40px 20px;
+    color: white;
+}
+
+.banner-conteudo h2 {
+    font-size: clamp(22px, 3vw, 36px);
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.banner-conteudo p {
+    color: #ccc;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.banner-botao {
+    display: inline-block;
+    padding: 16px 20px;
+
+    border: 2px solid white;
+    color: white;
+
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.banner-botao:hover {
+    background: white;
+    color: black;
+    padding: 16px 30px;
+}

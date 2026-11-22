@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --paper: #f1f0e8;
+  --ink: #171816;
+  --muted: #66675f;
+  --line: #c9c8bd;
+  --acid: #d7ff3f;
+  --blue: #315bff;
+
+  --section-bg: #deddd8;
+  --card-bg: yellowgreen;
+  --card-text: #171816;
+  --paragraph: #66675f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ---------- Animação Fade In ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Foto de perfil ---------- */
+
+.foto {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 10px auto;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- Container geral ---------- */
+
+.sobre {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ---------- Subtítulos (texto verde pequeno) ---------- */
+
+.subtitulo,
+.subtitulo2 {
+  display: block;
+  color: rgb(151, 217, 19);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+/* ---------- Introdução (topo) ---------- */
+
+.introducao {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+    url("../imagens/alessio-soggetti-gdE-5Oui1Y0-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 10%;
+  text-align: center;
+}
+
+.introducao h1 {
+  font-size: clamp(40px, 7vw, 75px);
+  margin: 25px 0;
+  font-weight: 700;
+  color: #f1f1f1;
+}
+
+.introducao h1 span {
+  color: var(--acid);
+}
+
+.descricao {
+  margin: 0 auto;
+  color: #fffdfd;
+  font-size: 20px;
+  line-height: 1.8;
+  max-width: 700px;
+  text-align: center;
+}
+
+/* ---------- Trajetória ---------- */
+
+.trajetoria {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 70px;
+  max-width: 900px;
+  margin: 0 auto 120px;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.destaque {
+  width: 100%;
+  max-width: 600px;
+  background: var(--card-bg);
+  border: 1px solid #383838;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+}
+
+.destaque h3 {
+  font-size: 25px;
+  margin: 25px 0;
+  line-height: 1.5;
+}
+
+.destaque p {
+  color: var(--card-text);
+  line-height: 1.8;
+}
+
+.parar {
+  color: black;
+}
+
+.codigo {
+  color: var(--ink);
+  font-size: 55px;
+  font-weight: 800;
+}
+
+/* ---------- Conhecimentos ---------- */
+
+.conhecimentos {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  margin-bottom: 120px;
+  padding: 100px 5%;
+  background-color: var(--section-bg);
+  text-align: center;
+}
+
+.tecnologias {
+  --gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: var(--gap);
+  max-width: 1000px;   /* largura total das 5 colunas */
+  margin: 35px auto 0;
+}
+
+.tech {
+  flex: 0 0 calc((100% - 4 * var(--gap)) / 5); /* 5 por linha */
+  text-align: center;
+}
+
+.tech {
+  padding: 15px 25px;
+  background: #252525;
+  border: 1px solid #383838;
+  border-radius: 5px;
+  color: yellowgreen;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.tech:hover {
+  transform: translateY(-5px);
+}
+
+/* ---------- Objetivo ---------- */
+
+.objetivo {
+  max-width: 940px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+/* ---------- Títulos e textos centralizados (padrão único) ---------- */
+
+.texto,
+.conhecimentos,
+.objetivo {
+  text-align: center;
+}
+
+.texto h2,
+.conhecimentos h2,
+.objetivo h2,
+.mys {
+  display: block;
+  margin: 20px auto 30px;
+  font-size: clamp(26px, 4vw, 36px);
+  line-height: 1.3;
+  text-align: center;
+}
+
+.texto p,
+.objetivo p {
+  max-width: 720px;
+  margin: 0 auto 20px;
+  color: var(--paragraph);
+  font-size: 16px;
+  line-height: 1.9;
+  text-align: center;
+}
+.trabalho{
+    font-size: 50px;
+    text-transform: uppercase;
+    padding: 30px;
+}
+.trabalho span{
+    color: #315bff;
+}
+/* ---------- Responsivo (sempre por último) ---------- */
+
+@media (max-width: 768px) {
+  .sobre {
+    width: 90%;
+    padding: 65px 0;
+  }
+
+  .introducao {
+    margin-bottom: 75px;
+  }
+
+  .trajetoria {
+    gap: 35px;
+    margin-bottom: 80px;
+  }
+
+  .destaque {
+    padding: 30px 20px;
+  }
+
+
+
+  .descricao {
+    font-size: 18px;
+  }
+}
+.conhecimentos {
+  min-height: calc(100vh - 92px); /* tela inteira, menos a altura do header */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 5%;
+}
+@media (max-width: 768px) {
+  .tech {
+    flex: 0 0 calc((100% - 2 * var(--gap)) / 3); /* 3 por linha */
+  }
+}
+
+@media (max-width: 480px) {
+  .tech {
+    flex: 0 0 calc((100% - var(--gap)) / 2); /* 2 por linha */
+  }
+}

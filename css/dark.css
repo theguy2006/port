@@ -1,0 +1,116 @@
+/* ===== dark.css ===== */
+
+/* Transição suave ao trocar de tema */
+.resumo,
+.conhecimentos,
+.tech,
+.project-card,
+.footer-mini {
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Cores base do tema escuro */
+[data-theme="dark"] {
+  color-scheme: dark; /* barra de rolagem e campos também ficam escuros */
+  --paper: #121311;
+  --ink: #f1f0e8;
+  --muted: #a7a89f;
+  --line: #2f302b;
+  --section-bg: #1a1b19;
+  --paragraph: #b9bab0;
+}
+
+/* Foto de perfil */
+[data-theme="dark"] .foto {
+  border-color: #2f302b;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* "O que eu sou" */
+[data-theme="dark"] .resumo {
+  background: #1d1e1b;
+}
+
+[data-theme="dark"] .resumo h2 {
+  color: var(--ink);
+}
+
+[data-theme="dark"] .resumo-item {
+  color: #d4d4cb;
+}
+
+[data-theme="dark"] .resumo-item span {
+  color: #9a9b92;
+}
+
+/* Ícones pretos (guitarrista) viram claros */
+[data-theme="dark"] .resumo-item img {
+  filter: invert(1);
+}
+
+/* Tecnologias */
+[data-theme="dark"] .tech {
+  background: #252622;
+  border-color: #33342f;
+}
+
+/* Projetos (ajuste os nomes se o seu CSS usar outros) */
+[data-theme="dark"] .project-card {
+  background: #1a1b19;
+  border-color: var(--line);
+}
+
+[data-theme="dark"] .project-info h3,
+[data-theme="dark"] .projects-title h2 {
+  color: var(--ink);
+}
+
+[data-theme="dark"] .project-info p,
+[data-theme="dark"] .projects-title p {
+  color: var(--paragraph);
+}
+
+[data-theme="dark"] .section-heading,
+[data-theme="dark"] .project-type {
+  color: var(--muted);
+}
+
+[data-theme="dark"] .tag-list span {
+  border-color: var(--line);
+  color: var(--paragraph);
+}
+
+/* Ícones pretos de GitHub/Site nos cards */
+[data-theme="dark"] .imgs-hover img {
+  filter: invert(1);
+}
+
+/* Rodapé: separa do fundo, que agora é escuro também */
+[data-theme="dark"] .footer-mini {
+  border-top: 1px solid var(--line);
+}
+/* Fundo geral */
+html[data-theme="dark"],
+html[data-theme="dark"] body {
+  background: #121311;
+  color: #f1f0e8;
+}
+
+/* Blocos que não devem ter fundo próprio */
+html[data-theme="dark"] .sobre,
+html[data-theme="dark"] .trajetoria,
+html[data-theme="dark"] .texto,
+html[data-theme="dark"] .objetivo {
+  background: transparent;
+}
+
+/* Seção de tecnologias (tinha cor fixa #deddd8) */
+html[data-theme="dark"] .conhecimentos {
+  background: #1a1b19;
+}
+
+/* Textos: o !important vence até o style="color: black" que ficou no HTML */
+html[data-theme="dark"] .texto p,
+html[data-theme="dark"] .objetivo p {
+  color: #f1f0e8 !important;
+}

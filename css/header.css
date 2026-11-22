@@ -1,0 +1,178 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 92px;
+}
+
+.topo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 92px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(20px, 5.5vw, 105px);
+  border-bottom: 1px solid #2a2b28;
+    background: rgba(23, 24, 22, 0.55);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  backdrop-filter: blur(12px) saturate(140%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  color: #f1f0e8;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.logo span {
+  color: #6c7bff;
+}
+
+.direita {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 2.5vw, 48px);
+}
+
+/* Menu */
+.menu ul {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 3.6vw, 70px);
+  list-style: none;
+}
+
+.menu a {
+  position: relative;
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #f1f0e8;
+  padding: 6px 0;
+}
+
+.menu a:not(.btn-contato)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #d7ff3f;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.menu a:not(.btn-contato):hover::after,
+.menu a.ativo:not(.btn-contato)::after {
+  transform: scaleX(1);
+}
+
+.menu .btn-contato {
+  display: inline-block;
+  padding: 18px 22px;
+  border: 1px solid #f1f0e8;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.menu .btn-contato:hover {
+  background: #f1f0e8;
+  color: #171816;
+}
+
+/* Botão de tema */
+.tema {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid #33342f;
+  background: transparent;
+  color: #f1f0e8;
+  cursor: pointer;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.tema:hover {
+  border-color: #f1f0e8;
+  transform: rotate(20deg);
+}
+
+.tema svg {
+  width: 22px;
+  height: 22px;
+}
+
+.icone-lua {
+  display: none;
+}
+
+[data-theme="dark"] .icone-sol {
+  display: none;
+}
+
+[data-theme="dark"] .icone-lua {
+  display: block;
+}
+
+/* Hambúrguer (só no celular) */
+.hamb {
+  display: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid #33342f;
+  background: transparent;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.hamb span {
+  width: 20px;
+  height: 2px;
+  background: #f1f0e8;
+}
+
+@media (max-width: 900px) {
+  .hamb {
+    display: flex;
+  }
+
+  .menu {
+    position: absolute;
+    top: 92px;
+    left: 0;
+    width: 100%;
+    background: #171816;
+    border-bottom: 1px solid #2a2b28;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .menu.aberto {
+    max-height: 420px;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    padding: 30px 20px 36px;
+  }
+}
