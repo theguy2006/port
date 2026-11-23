@@ -308,3 +308,69 @@ body {
     flex: 0 0 calc((100% - var(--gap)) / 2); /* 2 por linha */
   }
 }
+@media (max-width: 768px) {
+  .resumo {
+    margin: 40px auto;
+    padding: 30px 16px 36px;
+  }
+
+  .resumo h2 {
+    margin-bottom: 32px;
+  }
+
+  .resumo-lista {
+    gap: 14px;
+  }
+
+  .resumo-item {
+    gap: 12px;
+  }
+
+  .resumo-item svg,
+  .resumo-item img {
+    height: 38px;
+  }
+
+  .resumo-item span {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+}
+
+/* ---------- Celular: uma linha por item ---------- */
+
+@media (max-width: 520px) {
+  .resumo-lista {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .resumo-item {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 18px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.05);
+    text-align: left;
+  }
+
+  /* caixa de tamanho fixo para os 3 ícones ficarem alinhados */
+  .resumo-item svg,
+  .resumo-item img {
+    flex: 0 0 auto;
+    width: 48px;
+    height: 36px;
+    object-fit: contain;
+  }
+
+  .resumo-item span {
+    font-size: 16px;
+  }
+
+  [data-theme="dark"] .resumo-item {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}

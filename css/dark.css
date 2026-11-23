@@ -56,8 +56,12 @@
 
 /* Projetos (ajuste os nomes se o seu CSS usar outros) */
 [data-theme="dark"] .project-card {
-  background: #1a1b19;
+  background: #121311;
   border-color: var(--line);
+}
+[data-theme="dark"] .projetos{
+  background-color: rgb(35, 35, 35);
+  color: white;
 }
 
 [data-theme="dark"] .project-info h3,
@@ -80,10 +84,19 @@
   color: var(--paragraph);
 }
 
-/* Ícones pretos de GitHub/Site nos cards */
-[data-theme="dark"] .imgs-hover img {
-  filter: invert(1);
+html[data-theme="dark"] .imgs-hover a {
+  background: #252622;
+  border: 1px solid #33342f;
 }
+
+html[data-theme="dark"] .imgs-hover img {
+  filter: invert(1) !important;
+}
+
+html[data-theme="dark"] .imgs-hover a:hover {
+  background: #33342f;
+}
+
 
 /* Rodapé: separa do fundo, que agora é escuro também */
 [data-theme="dark"] .footer-mini {
