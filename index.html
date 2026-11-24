@@ -187,7 +187,7 @@
     </div>
 
     <div class="projects-title">
-        <h2 class="trabalho">Trablho <Span>em progresso</Span></h2>
+        <h2 class="trabalho">Trabalho <Span>em progresso</Span></h2>
         <p>Projetos pessoais que representam minha evolução prática. Alguns ainda estão em desenvolvimento.</p>
     </div>
 
@@ -197,7 +197,7 @@
         <article class="project-card">
             <div class="project-visual">
                 <img src="imagens/auv.png" alt="Ajudeumavida">
-                <span class="visual-label">01 — PLATAFORMA WEB</span>
+                <!-- <span class="visual-label">01 — PLATAFORMA WEB</span> -->
                 <div class="visual-bottom">
                     <!-- <span>CONEXÕES QUE AJUDAM</span> -->
                     <!-- <span>↗</span> -->
@@ -236,7 +236,7 @@
         <article class="project-card">
             <div class="project-visual">
                 <img src="imagens/fnf.png" alt="Franco Studio Fitness">
-                <span class="visual-label">02 — SITE INSTITUCIONAL</span>
+                <!-- <span class="visual-label">02 — SITE INSTITUCIONAL</span> -->
                 <div class="visual-bottom">
                     <!-- <span>DISCIPLINA • CONSTÂNCIA</span> -->
                     <!-- <span>↗</span> -->
@@ -274,7 +274,7 @@
         <article class="project-card">
             <div class="project-visual">
                 <img src="imagens/Captura de tela 2026-11-20 195725.png" alt="FortCell">
-                <span class="visual-label">03 — COMÉRCIO ELETRÔNICO</span>
+                <!-- <span class="visual-label">03 — COMÉRCIO ELETRÔNICO</span> -->
                 <div class="cine-title"></span>
                     <!-- <small>SEU PRÓXIMO APARELHO SE ENCONTRA AQUI.</small> -->
                 </div>
@@ -315,7 +315,7 @@
         <article class="project-card">
             <div class="project-visual">
                 <img src="imagens/barber.png" alt="Blackgold Barbearia">
-                <span class="visual-label">04 — BARBEARIA</span>
+                <!-- <span class="visual-label">04 — BARBEARIA</span> -->
                 <div class="barber"></span></div>
                 <div class="visual-bottom">
                     <!-- <span>SERVIÇOS DE BARBEARIA</span> -->
@@ -473,6 +473,15 @@
 
 <script src="scrips/animation.js"></script>
 <script src="scrips/header.js"></script>
-
+<script>
+  (function () {
+    var tema = 'light'; // tema padrão na primeira visita
+    try {
+      var salvo = localStorage.getItem('cf-tema');
+      if (salvo === 'dark' || salvo === 'light') tema = salvo;
+    } catch (e) {}
+    document.documentElement.setAttribute('data-theme', tema);
+  })();
+</script>
 </body>
 </html>

@@ -13,14 +13,50 @@
 
   if (!menu) return;
 
-  /* Tema claro/escuro */
+  /* Tema claro/escuro (salvo no navegador) */
+  const CHAVE_TEMA = 'cf-tema';
+
+  function lerTemaSalvo() {
+    try {
+      const salvo = localStorage.getItem(CHAVE_TEMA);
+      if (salvo === 'dark' || salvo === 'light') return salvo;
+    } catch (e) {}
+    return null;
+  }
+
+  function aplicarTema(tema) {
+    root.setAttribute('data-theme', tema);
+    if (btnTema) {
+      btnTema.setAttribute('aria-pressed', tema === 'dark');
+      btnTema.setAttribute(
+        'aria-label',
+        tema === 'dark' ? 'Mudar para tema claro' : 'Mudar para tema escuro'
+      );
+    }
+  }
+
+  function salvarTema(tema) {
+    try { localStorage.setItem(CHAVE_TEMA, tema); } catch (e) {}
+  }
+
+  /* Ao abrir a página: usa o salvo; senão o que já estiver no HTML; senão claro */
+  aplicarTema(lerTemaSalvo() || root.getAttribute('data-theme') || 'light');
+
+  /* Clique no botão: troca e salva */
   if (btnTema) {
     btnTema.addEventListener('click', function () {
       const novo = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', novo);
-      try { localStorage.setItem('tema', novo); } catch (e) {}
+      aplicarTema(novo);
+      salvarTema(novo);
     });
   }
+
+  /* Se o site estiver aberto em outra aba, acompanha a mudança */
+  window.addEventListener('storage', function (e) {
+    if (e.key === CHAVE_TEMA && (e.newValue === 'dark' || e.newValue === 'light')) {
+      aplicarTema(e.newValue);
+    }
+  });
 
   /* Menu do celular */
   if (hamb) {
